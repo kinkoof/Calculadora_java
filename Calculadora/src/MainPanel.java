@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -20,18 +21,23 @@ public class MainPanel implements ActionListener {
     double num1 = 0, num2 = 0, result = 0;
     char operador;
 
-    Font font = new Font("Ink Free", Font.BOLD, 30);
+    Font font = new Font("DialogInput", Font.BOLD, 30);
 
     MainPanel() {
         frame = new JFrame("Calculadora em Java");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 550);
         frame.setLayout(null);
+        frame.getContentPane().setBackground(Color.black);
+
+
 
         text = new JTextField();
         text.setBounds(50, 25, 300, 50);
         text.setFont(font);
+        text.setBackground(Color.black);
         text.setEditable(false);
+        text.setForeground(Color.green);
 
         add = new JButton("+");
         sub = new JButton("-");
@@ -39,8 +45,8 @@ public class MainPanel implements ActionListener {
         div = new JButton("÷");
         dec = new JButton(".");
         equal = new JButton("=");
-        del = new JButton("Delete");
-        clear = new JButton("Clear");
+        del = new JButton("Del");
+        clear = new JButton("C");
         neg = new JButton("(-)");
 
         funcButtons[0] = add;
@@ -56,6 +62,7 @@ public class MainPanel implements ActionListener {
         for (JButton botao : funcButtons) {
             botao.addActionListener(this);
             botao.setFont(font);
+            botao.setBackground(Color.LIGHT_GRAY);
             botao.setFocusable(false);
 
         }
@@ -64,14 +71,16 @@ public class MainPanel implements ActionListener {
             numButtons[i] = new JButton(String.valueOf(i));
             numButtons[i].addActionListener(this);
             numButtons[i].setFont(font);
+            numButtons[i].setBackground(Color.LIGHT_GRAY);
             numButtons[i].setFocusable(false);
         }
 
-        del.setBounds(50, 430, 100, 50);
+        del.setBounds(45, 430, 100, 50);
         clear.setBounds(150, 430, 100, 50);
-        neg.setBounds(250,430,100,50);
+        neg.setBounds(255,430,100,50);
 
         panel = new JPanel();
+        panel.setBackground(Color.black);
         panel.setBounds(50, 100, 300, 300);
         panel.setLayout(new GridLayout(4, 4, 10, 10));
 
