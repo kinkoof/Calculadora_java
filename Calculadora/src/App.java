@@ -1,7 +1,7 @@
 import javax.swing.JFrame;
 
 public class App extends MainPanel{
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         JFrame frame = new JFrame();
         MainPanel mainPanel = new MainPanel();
